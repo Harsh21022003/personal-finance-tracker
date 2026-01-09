@@ -9,12 +9,11 @@ require("dotenv").config();
 
 
 const app = express();
-const PORT = process.env.PORT || 5000
 app.use(cors());
 app.use(bodyParser.json());
 app.use(express.static("public"));
 
-const SECRET = process.env.JWT_SECRET;
+const SECRET = "secretkey";
 
 // Test route
 app.get("/", (req,res)=>{
@@ -400,4 +399,4 @@ app.post("/verify-email", (req,res)=>{
   }
 });
 
-app.listen(PORT, ()=>console.log(`Server running on port ${PORT}`));
+app.listen(5000, ()=>console.log("Server running on port 5000"));
