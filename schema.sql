@@ -1,0 +1,54 @@
+-- -- Personal Finance Tracker Database Schema
+
+-- CREATE DATABASE IF NOT EXISTS finance_app;
+-- USE finance_app;
+
+-- -- Users table
+-- CREATE TABLE IF NOT EXISTS users (
+--   id INT AUTO_INCREMENT PRIMARY KEY,
+--   email VARCHAR(255) UNIQUE NOT NULL,
+--   password VARCHAR(255) NOT NULL,
+--   email_verified BOOLEAN DEFAULT FALSE,
+--   verification_token VARCHAR(255),
+--   created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+-- );
+
+-- -- Transactions table
+-- CREATE TABLE IF NOT EXISTS transactions (
+--   id INT AUTO_INCREMENT PRIMARY KEY,
+--   user_id INT NOT NULL,
+--   amount DECIMAL(10, 2) NOT NULL,
+--   type ENUM('income', 'expense') NOT NULL,
+--   category VARCHAR(100) NOT NULL,
+--   description TEXT,
+--   date DATE NOT NULL,
+--   created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+--   FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE CASCADE,
+--   INDEX idx_user_date (user_id, date),
+--   INDEX idx_user_type (user_id, type)
+-- );
+
+-- -- Budgets table
+-- CREATE TABLE IF NOT EXISTS budgets (
+--   id INT AUTO_INCREMENT PRIMARY KEY,
+--   user_id INT NOT NULL,
+--   category VARCHAR(100) NOT NULL,
+--   amount DECIMAL(10, 2) NOT NULL,
+--   created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+--   updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+--   FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE CASCADE,
+--   UNIQUE KEY unique_user_category (user_id, category)
+-- );
+
+-- -- Income sources table (for recurring income)
+-- CREATE TABLE IF NOT EXISTS income_sources (
+--   id INT AUTO_INCREMENT PRIMARY KEY,
+--   user_id INT NOT NULL,
+--   source_name VARCHAR(255) NOT NULL,
+--   amount DECIMAL(10, 2) NOT NULL,
+--   frequency ENUM('daily', 'weekly', 'biweekly', 'monthly', 'yearly') NOT NULL,
+--   next_date DATE NOT NULL,
+--   is_active BOOLEAN DEFAULT TRUE,
+--   created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+--   FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE CASCADE
+-- );
