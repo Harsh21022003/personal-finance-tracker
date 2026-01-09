@@ -2,7 +2,7 @@ console.log("app.js loaded");
 let budgetChartInstance = null;
 let expenseChartInstance = null;
 
-const api ="https://finance-tracker-eight-gamma.vercel.app/";
+const api = "http://localhost:5000";
 
 /* ================= AUTH ================= */
 
