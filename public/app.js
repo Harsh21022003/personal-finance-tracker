@@ -2,7 +2,7 @@ console.log("app.js loaded");
 let budgetChartInstance = null;
 let expenseChartInstance = null;
 
-const api = "http://localhost:5000";
+const api = "personal-finance-tracker-seven-bay.vercel.app";
 
 /* ================= AUTH ================= */
 
