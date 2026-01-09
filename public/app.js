@@ -2,7 +2,7 @@ console.log("app.js loaded");
 let budgetChartInstance = null;
 let expenseChartInstance = null;
 
-const api ="https://personal-finance-tracker-seven-bay.vercel.app";
+const api ="https://finance-tracker-eight-gamma.vercel.app/";
 
 /* ================= AUTH ================= */
 
